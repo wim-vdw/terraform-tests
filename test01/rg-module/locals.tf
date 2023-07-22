@@ -11,7 +11,7 @@ locals {
     westeurope  = "we"
   }
   resource-group-name = join("-", [
-    "rg",
+    "rg-test01",
     local.location_short[local.location_lower_stripped],
     local.environment_short[local.environment_lower],
     var.application,
