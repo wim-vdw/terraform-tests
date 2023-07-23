@@ -6,14 +6,14 @@ resource "azurerm_resource_group" "rg" {
 resource "azurerm_virtual_network" "vnet-01" {
   name                = "vn-${local.suffix}-01"
   resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  location            = "northeurope"
   address_space       = ["99.0.0.0/16"]
 }
 
 resource "azurerm_virtual_network" "vnet-02" {
   name                = "vn-${local.suffix}-02"
   resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  location            = "westeurope"
   address_space       = ["100.0.0.0/16"]
 }
 
@@ -43,4 +43,11 @@ resource "azurerm_subnet" "backend" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet-01.name
   address_prefixes     = ["99.0.2.0/24"]
+}
+
+resource "azurerm_subnet" "home" {
+  name                 = "sn-${local.suffix}-home"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet-02.name
+  address_prefixes     = ["100.0.0.0/24"]
 }
