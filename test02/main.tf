@@ -16,3 +16,10 @@ resource "azurerm_subnet" "bastion" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["99.0.0.0/24"]
 }
+
+resource "azurerm_subnet" "frontend" {
+  name                 = "sn-${local.suffix}-frontend"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["99.0.1.0/24"]
+}
