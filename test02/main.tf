@@ -59,6 +59,13 @@ resource "azurerm_subnet" "backend" {
   address_prefixes     = ["10.255.2.0/24"]
 }
 
+resource "azurerm_subnet" "database" {
+  name                 = "sn-${local.suffix}-database"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet-01.name
+  address_prefixes     = ["10.255.3.0/24"]
+}
+
 resource "azurerm_subnet" "home" {
   name                 = "sn-${local.suffix}-home"
   resource_group_name  = azurerm_resource_group.rg.name
