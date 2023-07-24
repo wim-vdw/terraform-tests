@@ -1,6 +1,6 @@
 resource "azurerm_network_security_rule" "ssh-from-isp" {
-  resource_group_name         = azurerm_network_security_group.home.resource_group_name
-  network_security_group_name = azurerm_network_security_group.home.name
+  resource_group_name         = azurerm_network_security_group.nsg-we-home.resource_group_name
+  network_security_group_name = azurerm_network_security_group.nsg-we-home.name
   name                        = "ssh-from-isp"
   description                 = <<-EOT
     Allow SSH traffic only from ISP network.

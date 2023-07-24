@@ -73,13 +73,13 @@ resource "azurerm_subnet" "home" {
   address_prefixes     = ["10.254.0.0/24"]
 }
 
-resource "azurerm_network_security_group" "home" {
-  name                = "nsg-home"
+module "nsg-westeurope" {
+  source              = "./nsg-westeurope"
   location            = "westeurope"
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_subnet_network_security_group_association" "home" {
+resource "azurerm_subnet_network_security_group_association" "nsg-we-home" {
   subnet_id                 = azurerm_subnet.home.id
-  network_security_group_id = azurerm_network_security_group.home.id
+  network_security_group_id = module.nsg-westeurope.nsg-we-home-id
 }
