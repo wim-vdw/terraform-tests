@@ -38,13 +38,6 @@ resource "azurerm_subnet" "bastion" {
   address_prefixes     = ["10.255.0.0/25"]
 }
 
-resource "azurerm_subnet" "gateway" {
-  name                 = "sn-${local.suffix}-gateway"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet-01.name
-  address_prefixes     = ["10.255.0.128/26"]
-}
-
 resource "azurerm_subnet" "frontend" {
   name                 = "sn-${local.suffix}-frontend"
   resource_group_name  = azurerm_resource_group.rg.name
@@ -59,13 +52,6 @@ resource "azurerm_subnet" "backend" {
   address_prefixes     = ["10.255.2.0/24"]
 }
 
-resource "azurerm_subnet" "database" {
-  name                 = "sn-${local.suffix}-database"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet-01.name
-  address_prefixes     = ["10.255.3.0/24"]
-}
-
 resource "azurerm_subnet" "home" {
   name                 = "sn-${local.suffix}-home"
   resource_group_name  = azurerm_resource_group.rg.name
@@ -77,6 +63,27 @@ module "nsg-westeurope" {
   source              = "./nsg-westeurope"
   location            = "westeurope"
   resource_group_name = azurerm_resource_group.rg.name
+}
+
+module "nsg-northeurope" {
+  source              = "./nsg-northeurope"
+  location            = "northeurope"
+  resource_group_name = azurerm_resource_group.rg.name
+}
+
+resource "azurerm_subnet_network_security_group_association" "nsg-ne-bastion" {
+  subnet_id                 = azurerm_subnet.bastion.id
+  network_security_group_id = module.nsg-northeurope.nsg-ne-bastion-id
+}
+
+resource "azurerm_subnet_network_security_group_association" "nsg-ne-frontend" {
+  subnet_id                 = azurerm_subnet.frontend.id
+  network_security_group_id = module.nsg-northeurope.nsg-ne-frontend-id
+}
+
+resource "azurerm_subnet_network_security_group_association" "nsg-ne-backend" {
+  subnet_id                 = azurerm_subnet.backend.id
+  network_security_group_id = module.nsg-northeurope.nsg-ne-backend-id
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsg-we-home" {
