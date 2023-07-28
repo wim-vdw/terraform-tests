@@ -12,6 +12,9 @@ resource "azurerm_network_security_rule" "ssh-from-isp" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
-  source_address_prefixes     = ["94.227.0.0/16", "84.197.0.0/16"]
-  destination_address_prefix  = "*"
+  source_address_prefixes = [
+    "94.227.0.0/16",
+    "84.197.0.0/16",
+  ]
+  destination_address_prefix = "*"
 }
