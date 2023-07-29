@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = ">= 3.0.0, < 4.0.0"
-    }
-  }
-}
-
 resource "docker_image" "myalpine" {
   name = "myalpine"
   build {
