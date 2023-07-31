@@ -17,4 +17,9 @@ resource "docker_container" "mynginx" {
     internal = 80
     external = 80
   }
+  volumes {
+    container_path = "/usr/share/nginx/html/index.html"
+    host_path      = "${abspath(path.root)}/nginx/index.html"
+    read_only      = true
+  }
 }
