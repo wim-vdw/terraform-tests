@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM nginx:alpine
 
 ENV TIMEZONE=Europe/Brussels
 
@@ -8,5 +8,3 @@ RUN apk add alpine-conf
 # Set timezone with setup-timezone script.
 # https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts#setup-timezone
 RUN setup-timezone -z $TIMEZONE
-
-CMD ["sleep", "5"]
