@@ -7,10 +7,17 @@ Following Terraform features have been tested to create Azure resource groups:
 - Locals, variables, outputs
 - Modules
 - String interpolation/functions
-- Lifeycles
+- Lifecycles
 ## test02
 Following Terraform features have been tested to create Azure network components:
 - Virtual networks
 - Virtual network peering
 - Subnets
 - Network security groups and rules
+## test03
+Test with Docker resources.
+## test04
+Following Terraform features have been tested to create Azure dashboard components:
+- Azure shared dashboards
+- Heredoc strings
+- Lifecycles
