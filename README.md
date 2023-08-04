@@ -7,7 +7,7 @@ Following Terraform features have been tested to create Azure resource groups:
 - Locals, variables, outputs
 - Modules
 - String interpolation/functions
-- Lifeycles
+- Lifecycles
 ## test02
 Following Terraform features have been tested to create Azure network components:
 - Virtual networks
