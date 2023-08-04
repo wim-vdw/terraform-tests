@@ -8,7 +8,7 @@ resource "azurerm_portal_dashboard" "dashboard1" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   tags = {
-    hidden-title = "dashboard1 long name"
+    hidden-title = "Dashboard1 long name"
   }
   dashboard_properties = <<DASH
 {
@@ -22,7 +22,7 @@ resource "azurerm_portal_dashboard" "dashboard2" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   tags = {
-    hidden-title = "dashboard2 long name"
+    hidden-title = "Dashboard2 long name"
   }
   dashboard_properties = <<DASH
 {
