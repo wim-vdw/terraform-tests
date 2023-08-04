@@ -16,3 +16,8 @@ Following Terraform features have been tested to create Azure network components
 - Network security groups and rules
 ## test03
 Test with Docker resources.
+## test04
+Following Terraform features have been tested to create Azure dashboard components:
+- Azure shared dashboards
+- Heredoc strings
+- Lifecycles
