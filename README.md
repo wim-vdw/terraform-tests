@@ -14,3 +14,5 @@ Following Terraform features have been tested to create Azure network components
 - Virtual network peering
 - Subnets
 - Network security groups and rules
+## test03
+Test with Docker resources.
