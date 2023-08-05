@@ -4,17 +4,13 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_portal_dashboard" "dashboard1" {
-  name                = "dashboard1"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  name                 = "dashboard1"
+  resource_group_name  = azurerm_resource_group.rg.name
+  location             = azurerm_resource_group.rg.location
+  dashboard_properties = templatefile("templates/dashboard1.json", {})
   tags = {
     hidden-title = "Dashboard1 long name"
   }
-  dashboard_properties = <<DASH
-{
-  "lenses": {}
-}
-DASH
 }
 
 resource "azurerm_portal_dashboard" "dashboard2" {
@@ -28,7 +24,6 @@ resource "azurerm_portal_dashboard" "dashboard2" {
 {
   "lenses": {}
 }
-
 DASH
 
   lifecycle {
