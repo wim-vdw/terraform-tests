@@ -10,7 +10,7 @@ module "dashboard" {
   location       = azurerm_resource_group.rg.location
   resource_group = azurerm_resource_group.rg.name
   name           = "sd-test-01"
-  title          = "Test dashboard created via Terraform module"
+  title          = "Created via Terraform module"
   dashboard_properties = templatefile("templates/dashboard_template.json", {
     timezone = "Romance Standard Time",
     format   = "HH:mm"
