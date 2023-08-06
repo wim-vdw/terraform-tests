@@ -1,6 +1,10 @@
 resource "azurerm_resource_group" "rg" {
   location = "northeurope"
   name     = "rg-test05"
+  tags = {
+    author     = "Wim Van den Wyngaert"
+    managed-by = "Terraform"
+  }
 }
 
 module "dashboard" {
