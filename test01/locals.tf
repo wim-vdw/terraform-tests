@@ -9,6 +9,7 @@ locals {
         database    = "SAP HANA 2.0"
         OS          = "Linux RHEL"
         environment = "Production"
+        author      = "Wim Van den Wyngaert"
       }
     }
     frontend = {
