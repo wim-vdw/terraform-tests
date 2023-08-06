@@ -20,4 +20,6 @@ Test with Docker resources.
 Following Terraform features have been tested to create Azure dashboard components:
 - Azure shared dashboards
 - Heredoc strings
-- Lifecycles
+- templatefile function with variables
+- user-friendly dashboard titles
+- Lifecycle to ignore changes to dashboard properties
