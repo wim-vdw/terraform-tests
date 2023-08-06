@@ -4,10 +4,13 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_portal_dashboard" "dashboard1" {
-  name                 = "dashboard1"
-  resource_group_name  = azurerm_resource_group.rg.name
-  location             = azurerm_resource_group.rg.location
-  dashboard_properties = templatefile("templates/dashboard1.json", {})
+  name                = "dashboard1"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  dashboard_properties = templatefile("templates/dashboard1.json", {
+    timezone = "Romance Standard Time",
+    format   = "HH:mm"
+  })
   tags = {
     hidden-title = "Dashboard1 user-friendly title"
   }

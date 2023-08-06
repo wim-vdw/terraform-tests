@@ -15,8 +15,8 @@
             "type": "Extension/HubsExtension/PartType/ClockPart",
             "settings": {
               "content": {
-                "timezoneId": "Romance Standard Time",
-                "timeFormat": "HH:mm",
+                "timezoneId": "${timezone}",
+                "timeFormat": "${format}",
                 "version": 1
               }
             }
