@@ -23,3 +23,7 @@ Following Terraform features have been tested to create Azure dashboard componen
 - templatefile function with variables
 - user-friendly dashboard titles
 - Lifecycle to ignore changes to dashboard properties
+## test05
+Following Terraform features have been tested:
+- Terraform Cloud workspace
+- Terraform Cloud module to create dashboard
