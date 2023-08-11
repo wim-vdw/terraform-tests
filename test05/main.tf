@@ -24,12 +24,3 @@ module "dashboard" {
 output "dashboard_id" {
   value = module.dashboard.id
 }
-
-resource "azurerm_resource_group" "rg2" {
-  location = "northeurope"
-  name     = "rg-test05-bis"
-  tags = {
-    author     = "Wim Van den Wyngaert"
-    managed-by = "Terraform"
-  }
-}
