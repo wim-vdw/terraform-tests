@@ -15,6 +15,10 @@ module "dashboard" {
   resource_group = azurerm_resource_group.rg.name
   name           = "sd-test-01"
   title          = "Created via Terraform module"
+  additional_tags = {
+    env         = "development"
+    application = "Test app"
+  }
   dashboard_properties = templatefile("templates/dashboard_template.json", {
     timezone = "Romance Standard Time",
     format   = "HH:mm"
