@@ -27,3 +27,6 @@ Following Terraform features have been tested to create Azure dashboard componen
 Following Terraform features have been tested:
 - Terraform Cloud workspace
 - Terraform Cloud module to create dashboard
+## test06
+Following Terraform features have been tested:
+- Azure Keyvault
