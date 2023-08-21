@@ -29,4 +29,6 @@ Following Terraform features have been tested:
 - Terraform Cloud module to create dashboard
 ## test06
 Following Terraform features have been tested:
-- Azure Keyvault
+- Azure Role Assignment
+- Azure Keyvault / Secrets
+- Random Password generation
