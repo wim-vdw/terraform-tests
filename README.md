@@ -2,6 +2,7 @@
 Following address spaces are used for the different VNets that are created during the tests (to avoid overlap):
 - 10.255.0.0/16
 - 10.254.0.0/16
+- 10.253.0.0/16
 ## test01
 Following Terraform features have been tested to create Azure resource groups:
 - Locals, variables, outputs
@@ -18,7 +19,7 @@ Following Terraform features have been tested to create Azure network components
 Test with Docker resources.
 ## test04
 Following Terraform features have been tested to create Azure dashboard components:
-- Azure shared dashboards
+- Shared dashboards
 - Heredoc strings
 - templatefile function with variables
 - user-friendly dashboard titles
@@ -28,7 +29,13 @@ Following Terraform features have been tested:
 - Terraform Cloud workspace
 - Terraform Cloud module to create dashboard
 ## test06
-Following Terraform features have been tested:
-- Azure Role Assignment
-- Azure Keyvault / Secrets
+Following Azure features have been tested:
+- Role Assignment
+- Keyvault / Secrets
 - Random Password generation
+## test07
+Following Azure features have been tested:
+- Virtual machine (Linux)
+- Public IP address
+- VNet/Subnet/NSG
+- Data disk
