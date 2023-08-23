@@ -94,6 +94,22 @@ resource "azurerm_linux_virtual_machine" "vm1" {
   }
 }
 
+#resource "azurerm_managed_disk" "vm-data-disk01" {
+#  name                 = "vm-${local.suffix}-01-data-disk"
+#  location             = azurerm_resource_group.rg.location
+#  resource_group_name  = azurerm_resource_group.rg.name
+#  storage_account_type = "StandardSSD_LRS"
+#  create_option        = "Empty"
+#  disk_size_gb         = "8"
+#}
+
+#resource "azurerm_virtual_machine_data_disk_attachment" "data-10" {
+#  managed_disk_id    = azurerm_managed_disk.vm-data-disk01.id
+#  virtual_machine_id = azurerm_linux_virtual_machine.vm1.id
+#  lun                = "10"
+#  caching            = "ReadWrite"
+#}
+
 output "ip" {
   value = azurerm_public_ip.pip.ip_address
 }
