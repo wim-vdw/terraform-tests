@@ -2,6 +2,7 @@ resource "azurerm_resource_group" "rg" {
   location = "northeurope"
   name     = "rg-test05"
   tags = {
+    rg-tag     = "true"
     author     = "Wim Van den Wyngaert"
     managed-by = "Terraform"
   }
@@ -17,6 +18,7 @@ module "dashboard" {
   title          = "Created via Terraform module"
   additional_tags = {
     env         = "development"
+    author      = "Wim Van den Wyngaert"
     application = "Test app"
   }
   dashboard_properties = templatefile("templates/dashboard_template.json", {
