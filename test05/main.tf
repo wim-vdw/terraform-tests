@@ -16,7 +16,7 @@ module "dashboard" {
   name           = "sd-test-01"
   title          = "Created via Terraform module"
   additional_tags = {
-    env         = "development"
+    env = "development"
   }
   dashboard_properties = templatefile("templates/dashboard_template.json", {
     timezone = "Romance Standard Time",
