@@ -7,15 +7,6 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
-resource "azurerm_resource_group" "rg-bis" {
-  location = "northeurope"
-  name     = "rg-test05-bis"
-  tags = {
-    author     = "Wim Van den Wyngaert"
-    managed-by = "Terraform"
-  }
-}
-
 module "dashboard" {
   source  = "app.terraform.io/wimvandenwyngaert/dashboard/azurerm"
   version = ">= 1.0.0, < 2.0.0"
