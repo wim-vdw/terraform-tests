@@ -38,4 +38,4 @@ Following Azure features have been tested:
 - Virtual machine (Linux)
 - Public IP address
 - VNet/Subnet/NSG
-- Data disk a
+- Data disk
