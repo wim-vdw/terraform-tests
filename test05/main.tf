@@ -14,7 +14,7 @@ module "dashboard" {
   location       = azurerm_resource_group.rg.location
   resource_group = azurerm_resource_group.rg.name
   name           = "sd-test-01"
-  title          = "Created via Terraform module"
+  title          = "Created via Terraform cloud"
   additional_tags = {
     env = "development"
   }
