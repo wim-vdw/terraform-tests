@@ -1,6 +1,9 @@
 resource "azurerm_resource_group" "rg" {
   location = "northeurope"
   name     = "rg-${local.suffix}"
+  tags = {
+    managed-by = "Terraform"
+  }
 }
 
 resource "azurerm_virtual_network" "vnet-01" {
