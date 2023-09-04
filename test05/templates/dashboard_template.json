@@ -5,8 +5,8 @@
       "parts": {
         "0": {
           "position": {
-            "x": 0,
-            "y": 0,
+            "x": 1,
+            "y": 1,
             "colSpan": 2,
             "rowSpan": 2
           },
