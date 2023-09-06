@@ -9,3 +9,19 @@ resource "elasticstack_elasticsearch_index" "persons" {
     }
   })
 }
+
+data "elasticstack_elasticsearch_security_user" "user" {
+  username = "elastic"
+}
+
+data "elasticstack_elasticsearch_security_role" "role" {
+  name = "superuser"
+}
+
+output "user" {
+  value = data.elasticstack_elasticsearch_security_user.user
+}
+
+output "role" {
+  value = data.elasticstack_elasticsearch_security_role.role
+}
