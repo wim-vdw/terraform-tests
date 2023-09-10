@@ -39,3 +39,5 @@ Following Azure features have been tested:
 - Public IP address
 - VNet/Subnet/NSG
 - Data disk
+## test08
+Test with Elasticstack resources.
