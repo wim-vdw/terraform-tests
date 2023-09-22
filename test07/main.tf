@@ -92,6 +92,10 @@ resource "azurerm_linux_virtual_machine" "vm1" {
     username   = "wim"
     public_key = var.public_key
   }
+
+  identity {
+    type = "SystemAssigned"
+  }
 }
 
 resource "azurerm_managed_disk" "managed_disk" {
