@@ -99,9 +99,13 @@ resource "azurerm_linux_virtual_machine" "vm1" {
 }
 
 resource "azurerm_managed_disk" "managed_disk" {
-  for_each = local.data_disks
+  for_each = { for disk in local.data_disks : disk.lun => disk }
 
-  name                 = join("", [azurerm_linux_virtual_machine.vm1.name, "-datadisk", format("%02s", each.key)])
+  name = lookup(
+    each.value,
+    "disk_name",
+    join("", [azurerm_linux_virtual_machine.vm1.name, "-datadisk", format("%02s", each.key)])
+  )
   location             = azurerm_resource_group.rg.location
   resource_group_name  = azurerm_resource_group.rg.name
   storage_account_type = "StandardSSD_LRS"
@@ -110,12 +114,13 @@ resource "azurerm_managed_disk" "managed_disk" {
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "disk-attachment" {
-  for_each = local.data_disks
+  for_each = { for disk in local.data_disks : disk.lun => disk }
 
-  managed_disk_id    = azurerm_managed_disk.managed_disk[each.key].id
-  virtual_machine_id = azurerm_linux_virtual_machine.vm1.id
-  lun                = each.key
-  caching            = each.value.caching
+  managed_disk_id           = azurerm_managed_disk.managed_disk[each.key].id
+  virtual_machine_id        = azurerm_linux_virtual_machine.vm1.id
+  lun                       = each.value.lun
+  caching                   = each.value.caching
+  write_accelerator_enabled = lookup(each.value, "write_accelerator_enabled", false)
 }
 
 output "ip" {
