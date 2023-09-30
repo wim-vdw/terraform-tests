@@ -9,7 +9,7 @@ locals {
     },
     {
       lun     = 63,
-      size    = 2,
+      size    = 4,
       caching = "None",
     },
   ]
