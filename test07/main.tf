@@ -30,16 +30,16 @@ resource "azurerm_network_security_group" "default" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_network_security_rule" "ssh-from-home" {
+resource "azurerm_network_security_rule" "connection-from-home" {
   resource_group_name         = azurerm_network_security_group.default.resource_group_name
   network_security_group_name = azurerm_network_security_group.default.name
-  name                        = "ssh-from-home"
+  name                        = "connection-from-home"
   priority                    = 100
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "22"
+  destination_port_ranges     = ["22", "80"]
   source_address_prefix       = var.home_ip
   destination_address_prefix  = "*"
 }
