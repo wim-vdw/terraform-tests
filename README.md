@@ -65,3 +65,8 @@ Following Azure features have been tested:
 ## test08
 
 Test with Elasticstack resources.
+
+## test09
+
+Test with Terraform test framework.  
+Only available in Terraform version >= 1.6.0
