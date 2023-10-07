@@ -70,3 +70,9 @@ Test with Elasticstack resources.
 
 Test with Terraform test framework.  
 Only available in Terraform version >= 1.6.0
+
+## test10
+
+Following Azure features have been tested:
+
+- Maintenance Configuration (Azure Update Manager)
