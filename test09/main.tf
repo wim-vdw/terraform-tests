@@ -1,6 +1,10 @@
+variable "rg-name" {}
+
+variable "rg-location" {}
+
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-test09"
-  location = "northeurope"
+  name     = var.rg-name
+  location = var.rg-location
 }
 
 variable "first_name" {
@@ -10,3 +14,5 @@ variable "first_name" {
 variable "last_name" {
   default = "Van den Wyngaert"
 }
+
+

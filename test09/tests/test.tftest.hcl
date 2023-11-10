@@ -1,9 +1,19 @@
+variables {
+  rg-name     = "rg-test09"
+  rg-location = "northeurope"
+}
+
 run "validate_new_rg" {
   command = apply
 
   assert {
     condition     = azurerm_resource_group.rg.name == "rg-test09"
     error_message = "Resource group name is different from rg-test09"
+  }
+
+  assert {
+    condition     = azurerm_resource_group.rg.location == "northeurope"
+    error_message = "Resource group location is different from northeurope"
   }
 }
 
