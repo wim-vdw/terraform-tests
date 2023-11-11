@@ -2,9 +2,9 @@ resource "azurerm_resource_group" "rg" {
   location = "northeurope"
   name     = "rg-test05"
   tags = {
-    author      = "Wim Van den Wyngaert"
-    managed-by  = "Terraform Cloud"
-    environment = "Development"
+    author     = "Wim Van den Wyngaert"
+    managed-by = "Terraform Cloud"
+    project    = "Dummy"
   }
 }
 
