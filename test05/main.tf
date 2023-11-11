@@ -4,6 +4,7 @@ resource "azurerm_resource_group" "rg" {
   tags = {
     author     = "Wim Van den Wyngaert"
     managed-by = "Terraform Cloud"
+    project    = "Dummy"
   }
 }
 
