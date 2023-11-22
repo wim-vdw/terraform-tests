@@ -42,17 +42,21 @@ resource "azurerm_subnet" "bastion" {
 }
 
 resource "azurerm_subnet" "frontend" {
-  name                 = "sn-${local.suffix}-frontend"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet-01.name
-  address_prefixes     = ["10.255.1.0/24"]
+  name                                          = "sn-${local.suffix}-frontend"
+  resource_group_name                           = azurerm_resource_group.rg.name
+  virtual_network_name                          = azurerm_virtual_network.vnet-01.name
+  private_endpoint_network_policies_enabled     = true
+  private_link_service_network_policies_enabled = true
+  address_prefixes                              = ["10.255.1.0/24"]
 }
 
 resource "azurerm_subnet" "backend" {
-  name                 = "sn-${local.suffix}-backend"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet-01.name
-  address_prefixes     = ["10.255.2.0/24"]
+  name                                          = "sn-${local.suffix}-backend"
+  resource_group_name                           = azurerm_resource_group.rg.name
+  virtual_network_name                          = azurerm_virtual_network.vnet-01.name
+  private_endpoint_network_policies_enabled     = false
+  private_link_service_network_policies_enabled = false
+  address_prefixes                              = ["10.255.2.0/24"]
 }
 
 resource "azurerm_subnet" "home" {
