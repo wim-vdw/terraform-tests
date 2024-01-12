@@ -5,7 +5,10 @@ module "resource_groups_map" {
   location    = each.value.location
   environment = each.value.environment
   sequence    = can(each.value.sequence) ? each.value.sequence : null
-  tags        = can(each.value.tags) ? each.value.tags : null
+  spn_reader = {
+    enabled = true
+  }
+  tags = can(each.value.tags) ? each.value.tags : null
 }
 
 module "resource_groups_list" {
@@ -15,6 +18,10 @@ module "resource_groups_list" {
   location    = local.resource_groups_list[count.index].location
   environment = local.resource_groups_list[count.index].environment
   sequence    = local.resource_groups_list[count.index].sequence
+  spn_reader = {
+    enabled = true
+    spn_id  = "cbdc84cd-3e0c-46b4-8ef6-adafc47097d8"
+  }
 }
 
 output "rg-names1-list" {
