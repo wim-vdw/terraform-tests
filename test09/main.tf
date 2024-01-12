@@ -14,5 +14,3 @@ variable "first_name" {
 variable "last_name" {
   default = "Van den Wyngaert"
 }
-
-
