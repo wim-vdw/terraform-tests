@@ -39,3 +39,13 @@ variable "tags" {
   default     = {}
   description = "Tags"
 }
+
+variable "spn_reader" {
+  type = object({
+    enabled = bool
+    spn_id  = optional(string)
+  })
+  default = {
+    enabled = false
+  }
+}

@@ -18,4 +18,5 @@ locals {
     format("%02s", local.sequence)
     ]
   )
+  default_spn_id = "cbdc84cd-3e0c-46b4-8ef6-adafc47097d8"
 }
