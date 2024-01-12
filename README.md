@@ -1,4 +1,4 @@
-# Terraform tests3
+# Terraform tests
 
 Following address spaces are used for the different VNets that are created during the tests (to avoid overlap):
 
