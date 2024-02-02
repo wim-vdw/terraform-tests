@@ -1,6 +1,6 @@
 resource "kubernetes_namespace" "tf-namespace" {
   metadata {
-    name = "terraform-namespace"
+    name = "terraform-tests"
   }
 }
 
