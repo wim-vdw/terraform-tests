@@ -76,3 +76,9 @@ Only available in Terraform version >= 1.6.0
 Following Azure features have been tested:
 
 - Maintenance Configuration (Azure Update Manager)
+
+## test11
+
+Following Kubernetes features have been tested:
+
+- Deployment
