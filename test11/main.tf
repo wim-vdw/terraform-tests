@@ -39,3 +39,15 @@ resource "kubernetes_deployment" "mydeployment" {
     }
   }
 }
+
+resource "kubernetes_config_map" "myconfig" {
+  metadata {
+    name      = "my-config"
+    namespace = kubernetes_namespace.tf-namespace.id
+  }
+
+  data = {
+    env  = "development"
+    type = "application"
+  }
+}
