@@ -82,3 +82,4 @@ Following Azure features have been tested:
 Following Kubernetes features have been tested:
 
 - Deployment
+- ConfigMap
