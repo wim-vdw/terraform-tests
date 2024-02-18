@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "rg" {
   name     = "rg-test05"
   tags = {
     author     = "Wim Van den Wyngaert"
-    managed-by = "Terraform Cloud1"
+    managed-by = "Terraform Cloud"
   }
 }
 
