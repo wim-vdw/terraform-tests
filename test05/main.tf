@@ -9,10 +9,10 @@ resource "azurerm_resource_group" "rg" {
 
 module "dashboard" {
   source  = "app.terraform.io/wimvandenwyngaert/dashboard/azurerm"
-  version = ">= 2.0.0, < 3.0.0"
+  version = ">= 3.0.0, < 4.0.0"
 
   location       = azurerm_resource_group.rg.location
-  resource_group = azurerm_resource_group.rg.name
+  resource_group = azurerm_resource_group.rg
   name           = "sd-test-05"
   title          = "Created via Terraform Cloud"
   additional_tags = {
