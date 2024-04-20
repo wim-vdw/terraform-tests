@@ -47,7 +47,8 @@ resource "kubernetes_config_map" "myconfig" {
   }
 
   data = {
-    env  = "development"
-    type = "application"
+    env           = "development"
+    type          = "application"
+    num_processes = 3
   }
 }
