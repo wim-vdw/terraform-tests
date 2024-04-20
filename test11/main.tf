@@ -63,6 +63,4 @@ resource "kubernetes_secret" "secret" {
     username = "admin"
     password = "P4ssw0rd"
   }
-
-  type = "kubernetes.io/basic-auth"
 }
