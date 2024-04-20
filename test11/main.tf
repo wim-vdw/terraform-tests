@@ -52,3 +52,17 @@ resource "kubernetes_config_map" "myconfig" {
     num_processes = 3
   }
 }
+
+resource "kubernetes_secret" "secret" {
+  metadata {
+    name      = "secret"
+    namespace = kubernetes_namespace.tf-namespace.id
+  }
+
+  data = {
+    username = "admin"
+    password = "P4ssw0rd"
+  }
+
+  type = "kubernetes.io/basic-auth"
+}
