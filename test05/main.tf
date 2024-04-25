@@ -6,6 +6,7 @@ resource "azurerm_resource_group" "rg" {
     managed-by = "Terraform Cloud"
     env        = "dev"
     tag1       = "value1"
+    tag2       = "value2"
   }
 }
 
