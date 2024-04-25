@@ -4,6 +4,7 @@ resource "azurerm_resource_group" "rg" {
   tags = {
     author     = "Wim Van den Wyngaert"
     managed-by = "Terraform Cloud"
+    env        = "dev"
   }
 }
 
@@ -16,7 +17,7 @@ module "dashboard" {
   name           = "sd-test-05"
   title          = "Created via Terraform Cloud"
   additional_tags = {
-    env = "development"
+    type = "Test dashboard"
   }
   dashboard_properties = templatefile("templates/dashboard_template.json", {
     timezone = "Romance Standard Time",
