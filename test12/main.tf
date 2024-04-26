@@ -15,3 +15,12 @@ resource "azurerm_resource_group" "rg2" {
     env    = "development"
   }
 }
+
+resource "azurerm_resource_group" "rg3" {
+  location = "northeurope"
+  name     = "rg-test12-part3"
+  tags = {
+    author = "Wim Van den Wyngaert"
+    env    = "development"
+  }
+}
