@@ -83,3 +83,7 @@ Following Kubernetes features have been tested:
 
 - Deployment
 - ConfigMap
+
+## test12
+
+Test with Spacelift
