@@ -3,5 +3,6 @@ resource "azurerm_resource_group" "rg" {
   name     = "rg-test12"
   tags = {
     author = "Wim Van den Wyngaert"
+    env    = "development"
   }
 }
