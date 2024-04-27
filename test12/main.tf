@@ -33,3 +33,19 @@ resource "azurerm_resource_group" "rg4" {
     env    = "production"
   }
 }
+
+output "rg1" {
+  value = azurerm_resource_group.rg1
+}
+
+output "rg2" {
+  value = azurerm_resource_group.rg2
+}
+
+output "rg3" {
+  value = azurerm_resource_group.rg3
+}
+
+output "rg4" {
+  value = azurerm_resource_group.rg4
+}
