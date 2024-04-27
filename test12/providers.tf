@@ -1,13 +1,4 @@
 terraform {
-  backend "remote" {
-    hostname     = "spacelift.io"
-    organization = "wim-vdw"
-
-    workspaces {
-      name = "test"
-    }
-  }
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
