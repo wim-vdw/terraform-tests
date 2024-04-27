@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rg2" {
   name     = "rg-test12-part2"
   tags = {
     author = "Wim Van den Wyngaert"
-    env    = "development"
+    env    = "integration"
   }
 }
 
@@ -21,6 +21,15 @@ resource "azurerm_resource_group" "rg3" {
   name     = "rg-test12-part3"
   tags = {
     author = "Wim Van den Wyngaert"
-    env    = "development"
+    env    = "acceptance"
+  }
+}
+
+resource "azurerm_resource_group" "rg4" {
+  location = "northeurope"
+  name     = "rg-test12-part4"
+  tags = {
+    author = "Wim Van den Wyngaert"
+    env    = "production"
   }
 }
