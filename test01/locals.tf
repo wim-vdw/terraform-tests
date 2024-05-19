@@ -17,6 +17,11 @@ locals {
       environment = "production"
       sequence    = 10
     }
+    database = {
+      application = "database"
+      location    = "North Europe"
+      environment = "production"
+    }
   }
   resource_groups_list = [
     {
