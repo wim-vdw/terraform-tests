@@ -87,3 +87,10 @@ Following Kubernetes features have been tested:
 ## test12
 
 Test with Spacelift
+
+## test13
+
+Following Terraform features have been tested to create Azure Web App:
+
+- App Service Plan
+- Linux Web App (Python)
