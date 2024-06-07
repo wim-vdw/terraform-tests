@@ -19,7 +19,7 @@ resource "azurerm_linux_web_app" "app" {
 
   site_config {
     always_on        = false
-    app_command_line = "gunicorn --bind=0.0.0.0 'myapp:create_app()'"
+    app_command_line = "gunicorn --bind=0.0.0.0 \"myapp:create_app()\""
 
     application_stack {
       python_version = "3.12"
