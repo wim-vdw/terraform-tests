@@ -24,5 +24,9 @@ resource "azurerm_linux_web_app" "app" {
     application_stack {
       python_version = "3.12"
     }
+
+    cors {
+      allowed_origins = ["https://vdww.duckdns.org"]
+    }
   }
 }
