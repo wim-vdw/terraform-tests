@@ -43,18 +43,3 @@ resource "azurerm_linux_web_app" "app-wvdw-001" {
     }
   }
 }
-
-resource "azurerm_linux_web_app" "app-wvdw-002" {
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  name                = "app-wvdw-002"
-  service_plan_id     = azurerm_service_plan.asp.id
-
-  site_config {
-    always_on = false
-
-    application_stack {
-      python_version = "3.12"
-    }
-  }
-}
