@@ -1,9 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   location = "northeurope"
   name     = "rg-test13"
-  tags = {
-    environment = "Test"
-  }
 }
 
 resource "azurerm_service_plan" "asp" {
@@ -12,7 +9,6 @@ resource "azurerm_service_plan" "asp" {
   name                = "asp-test-01"
   os_type             = "Linux"
   sku_name            = "F1"
-  tags                = merge(azurerm_resource_group.rg.tags)
 }
 
 resource "azurerm_linux_web_app" "app-wvdw-001" {
@@ -20,7 +16,6 @@ resource "azurerm_linux_web_app" "app-wvdw-001" {
   location            = azurerm_resource_group.rg.location
   name                = "app-wvdw-001"
   service_plan_id     = azurerm_service_plan.asp.id
-  tags                = merge(azurerm_resource_group.rg.tags)
 
   logs {
     detailed_error_messages = false
