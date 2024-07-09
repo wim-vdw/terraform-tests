@@ -3,6 +3,9 @@ resource "docker_image" "mynginx" {
   keep_locally = false
   build {
     context = "./nginx"
+    build_args = {
+      TIMEZONE = "Europe/Brussels"
+    }
   }
   triggers = {
     dir_sha1 = sha1(join("", [for f in fileset(path.module, "nginx/*") : filesha1(f)]))
@@ -13,7 +16,6 @@ resource "docker_container" "mynginx" {
   name  = "mynginx"
   image = docker_image.mynginx.image_id
   rm    = true
-  env = ["TIMEZONE=Europe/Brussels"]
   ports {
     internal = 80
     external = 80
