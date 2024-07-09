@@ -2,7 +2,8 @@ resource "azurerm_resource_group" "rg1" {
   location = "northeurope"
   name     = "rg-test12-part1"
   tags = {
-    env = "development"
+    env       = "development"
+    manage-by = "Spacelift"
   }
 }
 
@@ -10,7 +11,8 @@ resource "azurerm_resource_group" "rg2" {
   location = "northeurope"
   name     = "rg-test12-part2"
   tags = {
-    env = "production"
+    env       = "production"
+    manage-by = "Spacelift"
   }
 }
 
