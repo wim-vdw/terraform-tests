@@ -1,6 +1,7 @@
-FROM nginx:1.26.1-alpine
+FROM nginx:1.27-alpine
 
-ENV TIMEZONE=Europe/Brussels
+ARG TIMEZONE=UTC
+ENV TIMEZONE=$TIMEZONE
 
 # Install Alpine configuration management scripts (needed for setup-timezone).
 RUN apk add alpine-conf
