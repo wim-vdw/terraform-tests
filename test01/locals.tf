@@ -21,6 +21,11 @@ locals {
       application = "database"
       location    = "North Europe"
       environment = "production"
+      tags = {
+        database    = "PostgreSQL 15"
+        OS          = "Ubuntu 24.04"
+        environment = "Production"
+      }
     }
   }
   resource_groups_list = [
