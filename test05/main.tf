@@ -30,8 +30,3 @@ module "dashboard" {
 output "dashboard_id" {
   value = module.dashboard.id
 }
-
-resource "azurerm_resource_group" "rg2" {
-  location = "northeurope"
-  name     = "rg-test05-part2"
-}
