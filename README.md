@@ -24,6 +24,10 @@ Following Terraform features have been tested to create Azure network components
 - Subnets
 - Network security groups and rules
 
+**Important for upgrade to AzureRM Provider 4.x:**  
+[AzureRM Provider changes 3.103.0 (May 09, 2024)](https://github.com/hashicorp/terraform-provider-azurerm/blob/main/CHANGELOG-v3.md#31030-may-09-2024)  
+[azurerm_subnet - the private_endpoint_network_policies_enabled property has been deprecated in favour of the private_endpoint_network_policies property #25779](https://github.com/hashicorp/terraform-provider-azurerm/pull/25779)
+
 ## test03
 
 Test with Docker resources.
