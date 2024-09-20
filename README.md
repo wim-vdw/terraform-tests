@@ -15,6 +15,9 @@ Following Terraform features have been tested to create Azure resource groups:
 - String interpolation/functions
 - Lifecycles
 
+**Important for upgrade to AzureRM Provider 4.x:**  
+[The subscription_id property is required when performing a plan or apply operation, but is not required to run terraform validate](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#subscription_id)
+
 ## test02
 
 Following Terraform features have been tested to create Azure network components:
