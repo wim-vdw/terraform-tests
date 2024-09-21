@@ -21,17 +21,31 @@ resource "azurerm_virtual_network" "vnet-02" {
 }
 
 resource "azurerm_virtual_network_peering" "peering1" {
-  name                      = "peer1to2"
-  resource_group_name       = azurerm_resource_group.rg.name
-  virtual_network_name      = azurerm_virtual_network.vnet-01.name
-  remote_virtual_network_id = azurerm_virtual_network.vnet-02.id
+  name                                   = "peer1to2"
+  resource_group_name                    = azurerm_resource_group.rg.name
+  virtual_network_name                   = azurerm_virtual_network.vnet-01.name
+  remote_virtual_network_id              = azurerm_virtual_network.vnet-02.id
+  peer_complete_virtual_networks_enabled = false
+  local_subnet_names = [
+    azurerm_subnet.bastion.name
+  ]
+  remote_subnet_names = [
+    azurerm_subnet.home.name
+  ]
 }
 
 resource "azurerm_virtual_network_peering" "peering2" {
-  name                      = "peer2to1"
-  resource_group_name       = azurerm_resource_group.rg.name
-  virtual_network_name      = azurerm_virtual_network.vnet-02.name
-  remote_virtual_network_id = azurerm_virtual_network.vnet-01.id
+  name                                   = "peer2to1"
+  resource_group_name                    = azurerm_resource_group.rg.name
+  virtual_network_name                   = azurerm_virtual_network.vnet-02.name
+  remote_virtual_network_id              = azurerm_virtual_network.vnet-01.id
+  peer_complete_virtual_networks_enabled = false
+  local_subnet_names = [
+    azurerm_subnet.home.name
+  ]
+  remote_subnet_names = [
+    azurerm_subnet.bastion.name
+  ]
 }
 
 resource "azurerm_subnet" "bastion" {
