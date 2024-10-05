@@ -5,9 +5,6 @@ resource "azurerm_resource_group" "rg" {
     author     = "Wim Van den Wyngaert"
     managed-by = "Terraform Cloud"
     env        = "dev"
-    tag1       = "value1"
-    tag2       = "value2"
-    tag3       = "value3"
   }
 }
 
