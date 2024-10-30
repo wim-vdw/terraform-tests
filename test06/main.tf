@@ -22,7 +22,7 @@ resource "azurerm_key_vault" "kv" {
   enable_rbac_authorization  = true
 }
 
-resource "random_password" "pwd1" {
+resource "random_password" "pwd" {
   length           = 20
   min_lower        = 1
   min_upper        = 1
@@ -32,8 +32,8 @@ resource "random_password" "pwd1" {
   override_special = "(){};&"
 }
 
-resource "azurerm_key_vault_secret" "user1" {
+resource "azurerm_key_vault_secret" "user" {
   name         = "user1"
-  value        = random_password.pwd1.result
+  value        = random_password.pwd.result
   key_vault_id = azurerm_key_vault.kv.id
 }
