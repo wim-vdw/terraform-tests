@@ -37,19 +37,3 @@ resource "azurerm_key_vault_secret" "user1" {
   value        = random_password.pwd1.result
   key_vault_id = azurerm_key_vault.kv.id
 }
-
-resource "random_password" "pwd2" {
-  length           = 20
-  min_lower        = 1
-  min_upper        = 1
-  min_numeric      = 1
-  min_special      = 1
-  special          = true
-  override_special = "(){};&"
-}
-
-resource "azurerm_key_vault_secret" "user2" {
-  name         = "user2"
-  value        = random_password.pwd2.result
-  key_vault_id = azurerm_key_vault.kv.id
-}
