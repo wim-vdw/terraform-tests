@@ -11,6 +11,7 @@ resource "tfe_project" "test" {
 resource "tfe_workspace" "terraform-tests-test05" {
   name              = "terraform-tests-test05"
   organization      = data.tfe_organization.wimvandenwyngaert.name
+  project_id        = tfe_project.test.id
   queue_all_runs    = false
   force_delete      = false
   working_directory = "test05-hcp-terraform"
