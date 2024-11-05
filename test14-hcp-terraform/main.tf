@@ -4,5 +4,6 @@ data "tfe_organization" "wimvandenwyngaert" {
 
 resource "tfe_project" "test" {
   organization = data.tfe_organization.wimvandenwyngaert.name
-  name = "testproject"
+  name         = "test"
+  description  = "This is a small test project"
 }
