@@ -1,4 +1,3 @@
-resource "tfe_organization" "wimvandenwyngaert" {
-  name  = "wimvandenwyngaert"
-  email = "wim.vandenwyngaert@gmail.com"
+data "tfe_organization" "wimvandenwyngaert" {
+  name = "wimvandenwyngaert"
 }
