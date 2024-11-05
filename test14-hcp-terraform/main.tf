@@ -9,6 +9,8 @@ resource "tfe_project" "test" {
 }
 
 resource "tfe_workspace" "terraform-tests-test05" {
-  name         = "terraform-tests-test05"
-  organization = data.tfe_organization.wimvandenwyngaert.name
+  name              = "terraform-tests-test05"
+  organization      = data.tfe_organization.wimvandenwyngaert.name
+  queue_all_runs    = true
+  working_directory = "test05-hcp-terraform"
 }
