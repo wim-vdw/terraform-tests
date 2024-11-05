@@ -15,6 +15,8 @@ resource "tfe_workspace" "terraform-tests-test05" {
   queue_all_runs    = false
   force_delete      = false
   working_directory = "test05-hcp-terraform"
+  execution_mode    = "remote"
+  agent_pool_id     = null
 
   vcs_repo {
     identifier                 = "wim-vdw/terraform-tests"
