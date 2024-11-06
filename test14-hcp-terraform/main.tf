@@ -5,12 +5,12 @@ data "tfe_organization" "wimvandenwyngaert" {
 resource "tfe_project" "test" {
   organization = data.tfe_organization.wimvandenwyngaert.name
   name         = "test"
-  description  = "This is a small test project"
+  description  = "This is a small test project."
 }
 
 resource "tfe_workspace" "terraform-tests-test05" {
   name              = "terraform-tests-test05"
-  description       = "This is a test workspace"
+  description       = "This is a test workspace."
   organization      = data.tfe_organization.wimvandenwyngaert.name
   project_id        = tfe_project.test.id
   queue_all_runs    = false
