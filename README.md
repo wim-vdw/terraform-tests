@@ -45,7 +45,7 @@ Following Terraform features have been tested to create Azure dashboard componen
 - user-friendly dashboard titles
 - Lifecycle to ignore changes to dashboard properties
 
-## test05
+## test05-hcp-terraform
 
 Following Terraform features have been tested:
 
@@ -101,3 +101,9 @@ Following Terraform features have been tested to create Azure Web App:
 
 - App Service Plan
 - Linux Web App (Python)
+
+## test14-hcp-terraform
+
+Following Terraform features have been tested:
+
+- Maintain Terraform Cloud project and workspace
