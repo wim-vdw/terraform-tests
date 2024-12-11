@@ -37,3 +37,15 @@ resource "azurerm_key_vault_secret" "user" {
   value        = random_password.pwd.result
   key_vault_id = azurerm_key_vault.kv.id
 }
+
+ephemeral "azurerm_key_vault_secret" "user" {
+  depends_on   = [azurerm_key_vault_secret.user]
+  name         = "user"
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+data "azurerm_key_vault_secret" "user" {
+  depends_on   = [azurerm_key_vault_secret.user]
+  name         = "user"
+  key_vault_id = azurerm_key_vault.kv.id
+}
