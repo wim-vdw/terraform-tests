@@ -1,11 +1,17 @@
-data "aws_iam_users" "users" {}
+resource "aws_vpc" "homelab1" {
+  cidr_block       = "10.255.0.0/16"
+  instance_tenancy = "default"
 
-data "aws_iam_roles" "roles" {}
-
-output "users" {
-  value = data.aws_iam_users.users.names
+  tags = {
+    Name = "homelab1-vpc"
+  }
 }
 
-output "roles" {
-  value = data.aws_iam_roles.roles.names
+resource "aws_vpc" "homelab2" {
+  cidr_block       = "10.254.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "homelab2-vpc"
+  }
 }
