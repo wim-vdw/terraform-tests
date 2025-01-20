@@ -30,6 +30,10 @@ resource "aws_iam_user" "vpc_reader" {
   name = "VPCReader"
 }
 
+resource "aws_iam_access_key" "vpc_reader" {
+  user = aws_iam_user.vpc_reader.name
+}
+
 resource "aws_iam_group_membership" "vpc_readers" {
   name = "group-membership-vpc-readers"
 
