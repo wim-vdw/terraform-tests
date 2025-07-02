@@ -27,7 +27,7 @@ module "dashboard" {
 
 module "dashboard_alpha" {
   source  = "app.terraform.io/wimvandenwyngaert/dashboard/azurerm"
-  version = "5.2.0-alpha.2"
+  version = ">= 5.0.0, < 6.0.0"
 
   location       = azurerm_resource_group.rg.location
   resource_group = azurerm_resource_group.rg
