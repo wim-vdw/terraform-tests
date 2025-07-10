@@ -5,6 +5,7 @@ Following address spaces are used for the different VNets that are created durin
 - 10.255.0.0/16
 - 10.254.0.0/16
 - 10.253.0.0/16
+- 10.252.0.0/16
 
 ## test01
 
