@@ -29,7 +29,7 @@ locals {
     },
     test = {
       name          = "test"
-      description   = "Test repository for Terraform GitHub provider - 2"
+      description   = "Test repository for Terraform GitHub provider"
       visibility    = "private"
       has_downloads = true
       has_issues    = true
