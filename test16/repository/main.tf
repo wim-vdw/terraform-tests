@@ -6,6 +6,7 @@ resource "github_repository" "repository" {
   has_issues    = var.has_issues
   has_projects  = var.has_projects
   has_wiki      = var.has_wiki
+  auto_init     = true
 }
 
 resource "github_branch" "main" {
