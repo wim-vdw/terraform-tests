@@ -10,11 +10,11 @@ module "repository" {
 }
 
 
-data "github_repositories" "repos" {
+data "github_repositories" "repositories" {
   query = "org:wim-vdw"
 }
 
-data "github_branch_protection_rules" "rules" {
-  count      = length(data.github_repositories.repos.names)
-  repository = data.github_repositories.repos.names[count.index]
+data "github_branch_protection_rules" "branch_protection_rules" {
+  count      = length(data.github_repositories.repositories.names)
+  repository = data.github_repositories.repositories.names[count.index]
 }
