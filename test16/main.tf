@@ -15,6 +15,6 @@ data "github_repositories" "repositories" {
 }
 
 data "github_branch_protection_rules" "branch_protection_rules" {
-  count      = length(data.github_repositories.repositories.names)
-  repository = data.github_repositories.repositories.names[count.index]
+  for_each   = toset(data.github_repositories.repositories.names)
+  repository = each.key
 }

@@ -26,15 +26,6 @@ locals {
       has_issues    = true
       has_projects  = true
       has_wiki      = true
-    },
-    test = {
-      name          = "test"
-      description   = "Test repository for Terraform GitHub provider"
-      visibility    = "private"
-      has_downloads = true
-      has_issues    = true
-      has_projects  = true
-      has_wiki      = true
     }
   }
 }
