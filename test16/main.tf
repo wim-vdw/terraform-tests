@@ -8,13 +8,3 @@ module "repository" {
   has_projects  = each.value.has_projects
   has_wiki      = each.value.has_wiki
 }
-
-
-data "github_repositories" "repositories" {
-  query = "org:wim-vdw"
-}
-
-data "github_branch_protection_rules" "branch_protection_rules" {
-  for_each   = toset(data.github_repositories.repositories.names)
-  repository = each.key
-}
