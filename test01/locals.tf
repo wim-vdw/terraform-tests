@@ -31,13 +31,13 @@ locals {
   resource_groups_list = [
     {
       application = "backend"
-      location    = "West Europe"
+      location    = "Belgium Central"
       environment = "development"
       sequence    = null
     },
     {
       application = "frontend"
-      location    = "West Europe"
+      location    = "Belgium Central"
       environment = "development"
       sequence    = 25
     }

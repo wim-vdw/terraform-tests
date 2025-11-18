@@ -7,8 +7,9 @@ locals {
     production  = "prd"
   }
   location_short = {
-    northeurope = "ne"
-    westeurope  = "we"
+    northeurope    = "ne"
+    westeurope     = "we"
+    belgiumcentral = "bc"
   }
   resource-group-name = join("-", [
     "rg-test01",

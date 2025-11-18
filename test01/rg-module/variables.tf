@@ -3,8 +3,8 @@ variable "location" {
   description = "Location of the resource"
 
   validation {
-    condition     = can(regex("(?i)europe$", var.location))
-    error_message = "Resources can only be created in North or West Europe."
+    condition     = can(regex("(?i)(europe$|belgium central$)", var.location))
+    error_message = "Resources can only be created in North or West Europe, or Belgium Central."
   }
 }
 
