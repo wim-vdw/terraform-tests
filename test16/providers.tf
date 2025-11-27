@@ -1,7 +1,6 @@
 terraform {
   backend "local" {
-    path          = "/Users/wim/Documents/terraform-state/terraform.tfstate"
-    workspace_dir = "/Users/wim/Documents/terraform-state/extra-workspaces"
+    path = "/Users/wim/Documents/terraform-state/terraform.tfstate"
   }
 
   required_providers {
