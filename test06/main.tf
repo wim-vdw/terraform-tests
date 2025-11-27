@@ -33,6 +33,7 @@ resource "random_password" "pwd" {
 }
 
 resource "azurerm_key_vault_secret" "user" {
+  depends_on   = [azurerm_role_assignment.role_assignment]
   name         = "user"
   value        = random_password.pwd.result
   key_vault_id = azurerm_key_vault.kv.id
