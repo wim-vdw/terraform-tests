@@ -44,3 +44,25 @@ resource "aws_iam_group_membership" "vpc_readers" {
 
   group = aws_iam_group.vpc_readers.name
 }
+
+data "aws_iam_policy_document" "assume_role_policy" {
+  statement {
+    sid     = "AllowCliVPCReaderUserToAssumeRole"
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+    principals {
+      type        = "AWS"
+      identifiers = [aws_iam_user.vpc_reader.arn]
+    }
+  }
+}
+
+resource "aws_iam_role" "VPCAdmin" {
+  name               = "VPCAdmin"
+  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
+}
+
+resource "aws_iam_role_policy_attachment" "vpc_admin_readonly" {
+  role       = aws_iam_role.VPCAdmin.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonVPCReadOnlyAccess"
+}
