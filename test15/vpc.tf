@@ -16,9 +16,9 @@ resource "aws_default_route_table" "homelab" {
 }
 
 resource "aws_subnet" "public1" {
-  vpc_id     = aws_vpc.homelab.id
+  vpc_id            = aws_vpc.homelab.id
   availability_zone = "eu-west-1a"
-  cidr_block = "10.255.0.0/24"
+  cidr_block        = "10.255.0.0/24"
 
   tags = {
     Name = "public-subnet1"
@@ -26,9 +26,9 @@ resource "aws_subnet" "public1" {
 }
 
 resource "aws_subnet" "public2" {
-  vpc_id     = aws_vpc.homelab.id
+  vpc_id            = aws_vpc.homelab.id
   availability_zone = "eu-west-1b"
-  cidr_block = "10.255.1.0/24"
+  cidr_block        = "10.255.1.0/24"
 
   tags = {
     Name = "public-subnet2"
@@ -36,9 +36,9 @@ resource "aws_subnet" "public2" {
 }
 
 resource "aws_subnet" "public3" {
-  vpc_id     = aws_vpc.homelab.id
+  vpc_id            = aws_vpc.homelab.id
   availability_zone = "eu-west-1c"
-  cidr_block = "10.255.2.0/24"
+  cidr_block        = "10.255.2.0/24"
 
   tags = {
     Name = "public-subnet3"
