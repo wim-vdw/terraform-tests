@@ -7,6 +7,14 @@ resource "aws_vpc" "homelab" {
   }
 }
 
+resource "aws_default_route_table" "homelab" {
+  default_route_table_id = aws_vpc.homelab.default_route_table_id
+
+  tags = {
+    Name = "main-rt"
+  }
+}
+
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.homelab.id
   cidr_block = "10.255.0.0/24"
