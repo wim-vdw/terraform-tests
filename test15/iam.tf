@@ -75,6 +75,14 @@ data "aws_iam_policy_document" "dynamodb" {
     ]
     resources = ["arn:aws:dynamodb:eu-west-1:850995531955:table/names"]
   }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "dynamodb:ListTables"
+    ]
+    resources = ["arn:aws:dynamodb:eu-west-1:850995531955:table/*"]
+  }
 }
 
 resource "aws_iam_user" "dynamodb_test" {
