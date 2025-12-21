@@ -1,6 +1,6 @@
 terraform {
   backend "local" {
-    path = "/Users/wim/Documents/terraform-state/terraform.tfstate"
+    path = "/Users/wim/Documents/terraform-state/test16/terraform.tfstate"
   }
 
   required_providers {
