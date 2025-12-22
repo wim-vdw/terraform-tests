@@ -36,5 +36,5 @@ resource "tfe_variable_set" "test" {
 }
 
 output "workspace_id" {
-  value = "tfe_workspace.terraform-tests-test05.id"
+  value = tfe_workspace.terraform-tests-test05.id
 }
