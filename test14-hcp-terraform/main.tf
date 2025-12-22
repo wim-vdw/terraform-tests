@@ -27,3 +27,10 @@ resource "tfe_workspace_settings" "terraform-tests-test05-settings" {
   workspace_id   = tfe_workspace.terraform-tests-test05.id
   execution_mode = "remote"
 }
+
+resource "tfe_variable_set" "test" {
+  name          = "test"
+  description   = "Test variable set"
+  organization  = "wimvandenwyngaert"
+  workspace_ids = [tfe_workspace.terraform-tests-test05.id]
+}
