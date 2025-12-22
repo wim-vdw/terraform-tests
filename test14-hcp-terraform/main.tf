@@ -34,3 +34,7 @@ resource "tfe_variable_set" "test" {
   organization  = "wimvandenwyngaert"
   workspace_ids = [tfe_workspace.terraform-tests-test05.id]
 }
+
+output "workspace_id" {
+  value = "tfe_workspace.terraform-tests-test05.id"
+}
