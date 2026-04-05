@@ -14,12 +14,6 @@ variable "visibility" {
   default     = "public"
 }
 
-variable "has_downloads" {
-  type        = bool
-  description = "Whether the repository has downloads enabled"
-  default     = true
-}
-
 variable "has_issues" {
   type        = bool
   description = "Whether the repository has issues enabled"
