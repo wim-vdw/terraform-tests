@@ -4,7 +4,6 @@ locals {
       name          = "argocd-setup"
       description   = "Argo CD installation and configuration"
       visibility    = "public"
-      has_downloads = true
       has_issues    = true
       has_projects  = true
       has_wiki      = true
@@ -13,7 +12,6 @@ locals {
       name          = "argocd-apps"
       description   = "Argo CD application definitions"
       visibility    = "public"
-      has_downloads = true
       has_issues    = true
       has_projects  = true
       has_wiki      = true
@@ -22,7 +20,6 @@ locals {
       name          = "argocd-k8s-resources"
       description   = "Kubernetes manifests or Helm charts used by Argo CD applications"
       visibility    = "public"
-      has_downloads = true
       has_issues    = true
       has_projects  = true
       has_wiki      = true
