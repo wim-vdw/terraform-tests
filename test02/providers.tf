@@ -1,8 +1,12 @@
 terraform {
+  backend "local" {
+    path = "/Users/wim/Documents/terraform-state/test02/terraform.tfstate"
+  }
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 4.0"
+      version = "~> 5.0"
     }
   }
 }
