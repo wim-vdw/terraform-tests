@@ -1,4 +1,8 @@
 terraform {
+  backend "local" {
+    path = "/Users/wim/Documents/terraform-state/test01/terraform.tfstate"
+  }
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
